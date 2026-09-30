@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>sinuh ka </title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:"Trebuchet MS",Arial,sans-serif;background:#183d29;display:flex;justify-content:center;align-items:center;padding:25px;overflow-x:hidden;position:relative}
+body:before{content:"";position:fixed;inset:0;background:radial-gradient(circle,#8dbb87 2px,transparent 3px);background-size:60px 60px;animation:bg 5s linear infinite;opacity:.25;pointer-events:none}
+@keyframes bg{to{background-position:60px 60px}}
+.float{position:fixed;bottom:-50px;animation:up linear forwards;pointer-events:none;z-index:10}
+@keyframes up{0%{transform:translateY(0) rotate(0);opacity:0}20%{opacity:1}100%{transform:translateY(-110vh) rotate(360deg);opacity:0}}
+.card{position:relative;width:100%;max-width:480px;background:#fffdf3;border:5px solid #b9d7ae;border-radius:35px;padding:20px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.45);z-index:2;animation:appear 1s ease}
+@keyframes appear{from{opacity:0;transform:translateY(40px) scale(.95)}to{opacity:1;transform:none}}
+.carnation{font-size:35px;animation:sway 2s ease-in-out infinite}
+@keyframes sway{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg) scale(1.1)}}
+.main-photo{width:100%;max-height:520px;object-fit:cover;border-radius:25px;border:5px solid #d2e5c9;box-shadow:0 8px 20px rgba(43,83,48,.35);animation:photo 4s ease-in-out infinite}
+@keyframes photo{0%,100%{transform:rotate(-1deg)}50%{transform:rotate(1deg) scale(1.01)}}
+h1{color:#396c45;font-size:32px;margin:18px 0 5px}.subtitle{color:#789177;font-size:15px}
+.gif-container{display:flex;justify-content:center;gap:8px;margin:10px 0}.gif{width:85px;height:85px;object-fit:contain;border-radius:15px}
+button{border:none;background:#4d8057;color:white;font-size:17px;padding:14px 30px;border-radius:30px;cursor:pointer;margin:15px;box-shadow:0 5px 10px rgba(40,80,45,.25);transition:.3s}
+button:hover{transform:scale(1.08);background:#315f3b}
+#message{display:none;background:#edf6e9;border:2px dashed #a6c69b;border-radius:22px;padding:18px;color:#526953;line-height:1.7;animation:msg 1s ease}
+@keyframes msg{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.signature{color:#396c45;font-weight:bold}.footer{color:#8ca487;font-size:12px;margin-top:18px}
+</style>
+</head>
+<body>
+<div class="card">
+<div class="carnation">🌸 🌿 🌸</div>
+
+<img class="main-photo" src="./strawberry-babies.jpg" alt="Cute strawberry babies">
+
+<h1>halerr babyy💚😝</h1>
+
+
+<p class="subtitle">sorpraysss... 😝😝</p>
+
+<div class="gif-container">
+<img class="gif" src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Cute cat">
+<img class="gif" src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" alt="Cute dog">
+</div>
+
+
+<button onclick="openMessage()">pakipinger 😏</button>
+
+<div id="message">
+<p>wala me msabi miss u lang...<br><br>so Ituh na tlga yorn. 😭<br><br>sanah nagustuhan muhh. 🥹💚</p>
+
+<div class="gif-container">
+<img class="gif" src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" alt="Cute dog">
+</div>
+
+<p>ituh uh carnation kc sabi muh fav mo 🌸🌸(emoji lang surih, di me sure pero ituh emoji lumabas sa google ih)<br><br>pati sikolit o 🍫</p>
+
+
+<p>Anyway...<br><br>sana napawi paguhd muh 😜😜💚</p>
+
+
+<p class="signature">— galing sa kabit mo ♡</p>
+</div>
+
+<div class="footer">gawang tamad narush mwehehe</div>
+</div>
+
+<script>
+function openMessage(){
+document.getElementById("message").style.display="block";
+document.querySelector("button").innerHTML="isa pa 🙂‍↕️";
+const decorations=["🍫","🌸","💚","🌿","✨","♡","🐾","🌷"];
+for(let i=0;i<35;i++){
+let item=document.createElement("div");
+item.className="float";
+item.innerHTML=decorations[Math.floor(Math.random()*decorations.length)];
+item.style.left=Math.random()*100+"vw";
+item.style.fontSize=(15+Math.random()*20)+"px";
+item.style.animationDuration=(4+Math.random()*5)+"s";
+item.style.animationDelay=Math.random()*2+"s";
+document.body.appendChild(item);
+setTimeout(()=>item.remove(),10000);
+}}
+</script>
+</body>
+</html>
